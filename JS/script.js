@@ -39,15 +39,15 @@ function generateProblem() {
     }
 
     // Limpiar el campo de respuesta y resultado
-    document.getElementById('answer').value = '';
-    document.getElementById('result').textContent = '';
+    document.getElementById('respuesta').value = '';
+    document.getElementById('resultado').textContent = '';
 }
 
 // Función para comprobar la respuesta del usuario
 function checkAnswer() {
-    const userAnswer = parseFloat(document.getElementById('answer').value);
-    const resultElement = document.getElementById('result');
-    if (userAnswer === result) {
+    const respuesta = parseFloat(document.getElementById('respuesta').value);
+    const resultElement = document.getElementById('resultado');
+    if (respuesta === result) {
         resultElement.textContent = '¡Respuesta correcta! 🎉';
     } else {
         resultElement.textContent = 'Respuesta incorrecta. Inténtalo de nuevo. 😔';
@@ -58,7 +58,7 @@ function checkAnswer() {
 }
 
 // Evento al presionar la tecla "Enter"
-document.getElementById('answer').addEventListener('keyup', function (event) {
+document.getElementById('respuesta').addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         checkAnswer();
     }
